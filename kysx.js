@@ -14,8 +14,6 @@
 hostname = api.tumukaoyan.com
 *************************************/
 
-const crypto = require('crypto');
-
 // 加密函数
 function encrypt(data, key, iv) {
   const cipher = crypto.createCipheriv('aes-256-cbc', key, iv);
