@@ -8,7 +8,7 @@
 **************************************
 
 [rewrite_local]
-^https:\/\/api\.tumukaoyan\.com\/api\/wx\/CheckCodeV3 url script-response-body 
+^https:\/\/api\.tumukaoyan\.com\/api\/wx\/CheckCodeV3 url script-response-body https://raw.githubusercontent.com/leey668/pyer/main/kysx.js
 
 [mitm]
 hostname = api.tumukaoyan.com
