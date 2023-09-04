@@ -32,8 +32,8 @@ function decrypt(encrypted, key, iv) {
 	return decrypted;
 }
 
-const key = Buffer.from('59b87344b54f31977f7c3dd445ab13e1', 'utf8');
-const iv = Buffer.from('59b87344b54f3197', 'utf8');
+const key = '59b87344b54f31977f7c3dd445ab13e1';
+const iv = '59b87344b54f3197';
 
 var obj = JSON.parse($response.body);
 var decryptedText = JSON.parse(decrypt(obj.data, key, iv));
