@@ -8,8 +8,8 @@
 **************************************
 
 [rewrite_local]
-^https:\/\/main-sciam-nature\.content\.pugpig\.com\/subs\/itunes_store\/verify_subscription url script-response-body 
-^https:\/\/main-sciam-nature\.content\.pugpig\.com\/subs\/pianomediaoauth_subs\/verify_subscription url script-response-body
+^https:\/\/main-sciam-nature\.content\.pugpig\.com\/subs\/itunes_store\/verify_subscription url script-response-body https://raw.githubusercontent.com/leey668/pyer/main/sa.js
+^https:\/\/main-sciam-nature\.content\.pugpig\.com\/subs\/pianomediaoauth_subs\/verify_subscription url script-response-body https://raw.githubusercontent.com/leey668/pyer/main/sa.js
 [mitm]
 hostname = main-sciam-nature.content.pugpig.com
 
