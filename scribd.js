@@ -18,7 +18,7 @@ if (-1 !== $request.url.indexOf("/api/v2/payments/current_subscription")) {
     var obj = JSON.parse($response.body);
     obj.result = {
         "id": 999999999,
-        "state": "monthly",
+        "state": "trialing",
         "next_payment_due": 4070880000,
         "limited_validity": null,
         "last_paid_date": null,
@@ -41,24 +41,51 @@ if (-1 !== $request.url.indexOf("/api/v2/payments/current_subscription")) {
     $done({body: JSON.stringify(obj)});
 }else if (-1 !== $request.url.indexOf("/api/v2/payments/apple_receipt") || -1 !== $request.url.indexOf("/api/v2/users/account_info")) {
     var obj = JSON.parse($response.body);
-    var credit_cache_bust = obj.result.membership_info.credit_cache_bust;
-    obj.result.membership_info = {
-        "status": "monthly",
-        "resume_date": null,
-        "credit_cache_bust": "",
-        "bill_date": 4070880000,
-        "pays_additional_tax": false,
-        "has_pmp_access": true,
-        "end_date": null,
-        "bill_method": "apple",
-        "next_bill_price": {
-          "value": 999,
-          "currency": "USD"
+    obj = {
+        "status": {
+          "message": "OK",
+          "code": 0
+        },
+        "result": {
+          "id": 999999999,
+          "crossbrand_banners": {
+            "annotations": false,
+            "collections": false,
+            "saved_content": false
+          },
+          "resubscription_reason": null,
+          "membership_info": {
+            "status": "trial",
+            "resume_date": null,
+            "credit_cache_bust": "",
+            "bill_date": 4070880000,
+            "pays_additional_tax": false,
+            "has_pmp_access": true,
+            "end_date": null,
+            "bill_method": "apple",
+            "next_bill_price": {
+              "value": 999,
+              "currency": "USD"
+            }
+          },
+          "credit_next_accrual_date": 4070880000,
+          "is_referral_creditable": false,
+          "eligible_plans": [],
+          "is_paused": false,
+          "apple_user_id": "https://t.me/chxm1023",
+          "subscription_promo_state": "none",
+          "referral_urls": {
+            "global": "https://www.scribd.com/gi/bgn44q",
+            "email": "https://www.scribd.com/gie/bgn44q",
+            "twitter": "https://www.scribd.com/git/bgn44q",
+            "facebook_status": "https://www.scribd.com/gifbs/bgn44q",
+            "facebook_friend": "https://www.scribd.com/gifbf/bgn44q",
+            "text": "https://www.scribd.com/gitx/bgn44q"
+          },
+          "email": "https://t.me/chxm1023",
+          "convertible_plans": [],
+          "reading_speed_wpm": 0
         }
       };
-    obj.result.membership_info.credit_cache_bust = credit_cache_bust;
-    obj.result.credit_next_accrual_date = 4070880000;
-    obj.result.eligible_plans = [];
-    obj.result.subscription_promo_state = "none";
     $done({body: JSON.stringify(obj)});
 }
