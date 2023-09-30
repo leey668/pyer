@@ -41,6 +41,8 @@ if (-1 !== $request.url.indexOf("/api/v2/payments/current_subscription")) {
     $done({body: JSON.stringify(obj)});
 }else if (-1 !== $request.url.indexOf("/api/v2/payments/apple_receipt") || -1 !== $request.url.indexOf("/api/v2/users/account_info")) {
     var obj = JSON.parse($response.body);
+    var apple_user_id = obj.result.apple_user_id;
+    var id = obj.result.id;
     obj = {
         "status": {
           "message": "OK",
@@ -87,5 +89,7 @@ if (-1 !== $request.url.indexOf("/api/v2/payments/current_subscription")) {
           "reading_speed_wpm": 0
         }
       };
+    obj.result.apple_user_id = apple_user_id;
+    obj.result.id = id;
     $done({body: JSON.stringify(obj)});
 }
