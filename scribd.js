@@ -72,7 +72,7 @@ if (-1 !== $request.url.indexOf("/api/v2/payments/current_subscription")) {
           "is_referral_creditable": false,
           "eligible_plans": [],
           "is_paused": false,
-          "apple_user_id": "https://t.me/chxm1023",
+          "apple_user_id": "000000.00000000000000000000000000000000.0000",
           "subscription_promo_state": "none",
           "referral_urls": {
             "global": "https://www.scribd.com/gi/bgn44q",
