@@ -14,7 +14,7 @@ hostname = api.scribd.com
 
 *************************************/
 
-if (-1 != $request.url.indexOf("/api/v2/payments/current_subscription")) {
+if (-1 !== $request.url.indexOf("/api/v2/payments/current_subscription")) {
     var obj = JSON.parse($response.body);
     obj.result = {
         "id": 999999999,
@@ -39,7 +39,7 @@ if (-1 != $request.url.indexOf("/api/v2/payments/current_subscription")) {
         "product_handle": "com.scribd.ios.premium.monthly.9.99.unlimited"
       };
     $done({body: JSON.stringify(obj)});
-}else if (-1 != $request.url.indexOf("/api/v2/payments/apple_receipt"||"/api/v2/users/account_info")) {
+}else if (["/api/v2/payments/apple_receipt", "/api/v2/users/account_info"].includes($request.url)) {
     var obj = JSON.parse($response.body);
     var credit_cache_bust = obj.result.membership_info.credit_cache_bust;
     obj.result.membership_info = {
