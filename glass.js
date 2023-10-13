@@ -8,7 +8,7 @@
 **************************************
 
 [rewrite_local]
-^https:\/\/glass\.photo\/api\/(v2\/users\/[0-9a-zA-Z-]+$|v1\/account|v3\/token) url script-response-body https://raw.githubusercontent.com/leey668/pyer/main/glass.js
+^https:\/\/glass\.photo\/api\/(v2\/users\/[0-9a-zA-Z-]+$|v1\/account$|v3\/token$) url script-response-body https://raw.githubusercontent.com/leey668/pyer/main/glass.js
 [mitm]
 hostname = glass.photo
 
