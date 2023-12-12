@@ -4,8 +4,8 @@
 #!author = @leepyer
 #!homepage = https://github.com/leey668
 #!icon = https://www.revenuecat.com/icons/icon-512x512.png
-#!select = name
-#!select = appid
+#!input = name
+#!input = appid
 #!date = 2023-12-12 00:00:00
 
 [Script]
