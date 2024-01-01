@@ -12,11 +12,6 @@
     'use strict';
     if (!/piclist\.aspx\?id=/.test(window.location.href)) return;
 
-    let targetElement = document.getElementById('downlaod');
-    if (targetElement) {
-        targetElement.style.display = 'block';
-    }
-
     let downloadLinkElement = document.querySelector(".piclist_dl_l");
     let passwordElement = document.getElementById("copy-content");
     if (downloadLinkElement && passwordElement) {
@@ -24,6 +19,11 @@
         const urlMatch = downloadLink && downloadLink.match(/window.open\('([^']+)'\)/);
         let url = urlMatch && urlMatch[1];
         if (url) {
+            const targetElement = document.getElementById('downlaod');
+            if (targetElement) {
+                targetElement.style.display = 'block';
+            }
+            
             const password = passwordElement.value;
             const fullLink = url + "?pwd=" + password;
             const icon = document.createElement('img');
