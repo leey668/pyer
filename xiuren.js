@@ -25,10 +25,10 @@
         var downloadLink = downloadLinkElement.getAttribute('onclick');
         var urlMatch = downloadLink && downloadLink.match(/window.open\('([^']+)'\)/);
         var url = urlMatch && urlMatch[1];
-        if (url) {  
+        if (url) {
             // 将提取的密码拼接到下载链接上
-            var password = passwordElement.value;  
-            var fullLink = url + "?pwd=" + password;  
+            var password = passwordElement.value;
+            var fullLink = url + "?pwd=" + password;
             // 创建下载图标并配置样式，添加到页面底部供用户点击
             var icon = document.createElement('img');
             icon.src = 'https://nd-static.bdstatic.com/m-static/wp-brand/favicon.ico';
@@ -36,7 +36,7 @@
             icon.onclick = function() {
                 // 提示用户解压密码并在新窗口中打开下载链接
                 alert('解压密码：www.newxiuren.com');
-                window.open(fullLink, '_blank'); 
+                window.open(fullLink, '_blank');
             };
             document.body.appendChild(icon); // 将图标元素添加到DOM中
         }
@@ -68,7 +68,7 @@
         anchor.dataset.author = "newxiuren.cc"; // 设置作者信息
         let img = document.createElement('img');
         img.src = imageUrl; // 图片源为构造的URL
-        img.alt = firstImage.alt;  // 使用第一张图片的alt作为其他图片的alt
+        img.alt = firstImage.alt; // 使用第一张图片的alt作为其他图片的alt
         anchor.appendChild(img); // 将图片添加到链接元素中
         figure.appendChild(anchor); // 将链接元素添加到figure中
         contentDiv.appendChild(figure); // 将figure添加到内容容器中
