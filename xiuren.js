@@ -3,8 +3,8 @@
 // @version      0.1
 // @description  www.newxiuren.com 显示全部图片，开启百度网盘下载页面，增加提取百度网盘链接按钮
 // @author       leepyer
-// @match        *//m.newxiuren.com.cn/piclist.aspx?id=*
-// @match        *//m.newxiuren.com/piclist.aspx?id=*
+// @match        *//*.newxiuren.com.cn/piclist.aspx?id=*
+// @match        *//*.newxiuren.com/piclist.aspx?id=*
 // @icon         http://m.newxiuren.com.cn/images/style/favicon.ico
 // ==/UserScript==
 
