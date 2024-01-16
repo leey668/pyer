@@ -9,7 +9,7 @@
 
 [rewrite_local]
 ^https:\/\/xapi\.xinmanhua\.net\/(chapters\/\d+\/isreadable|member|worksinfos\/\d+\?) url script-response-body https://raw.githubusercontent.com/leey668/pyer/main/xinmanhua.js
-^https:\/\/xapi\.xinmanhua\.net\/splashgroups url reject
+^https:\/\/xapi\.xinmanhua\.net\/splashgroups url reject-dict
 [mitm]
 hostname = xapi.xinmanhua.net
 
