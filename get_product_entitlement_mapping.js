@@ -1,9 +1,5 @@
-const authorization = $request.headers["authorization"];
 const url = "https://api.revenuecat.com/v1/product_entitlement_mapping";
-const headers = {
-    'content-type': 'application/json',
-    'authorization': authorization
-};
+const headers = { ...$request.headers };
 let params = {
     url:url,
     timeout:5000,
@@ -11,10 +7,10 @@ let params = {
 };
 $httpClient.get(params, function(errormsg,response,data) {
     if (errormsg) {
-			console.log(errormsg);
+        console.log(errormsg);
     } else {
-			$notification.post('', '已获取','');
-			console.log(JSON.parse(data));
+        $notification.post('', '信息已获取','');
+        console.log(JSON.parse(data));
     }
-		$done();
+    $done();
 });
