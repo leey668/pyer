@@ -1,5 +1,5 @@
 #!name = revenuecat
-#!desc = 恢复订阅模板
+#!desc = 恢复订阅模板，多个值以“,”分隔
 #!openUrl = 
 #!author = @leepyer
 #!homepage = https://github.com/leey668
