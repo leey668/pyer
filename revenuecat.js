@@ -16,7 +16,7 @@ if (typeof $response == "undefined") {
   for (let i = 0; i < names.length && i < appids.length; i++) {
     const name = names[i];
     const appid = appids[i];
-		const data = {
+		let data = {
       "product_identifier": appid
     };
     if (forever) {
