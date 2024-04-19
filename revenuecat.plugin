@@ -1,11 +1,12 @@
 #!name = revenuecat
-#!desc = 恢复订阅模板，多个值以“,”分隔
+#!desc = 恢复订阅模板，多个值以“,”分隔，forever为true或false。
 #!openUrl = 
 #!author = @leepyer
 #!homepage = https://github.com/leey668
 #!icon = https://www.revenuecat.com/icons/icon-512x512.png
 #!input = name
 #!input = appid
+#!input = forever
 #!date = 2024-04-11 00:00:00
 
 [Script]
