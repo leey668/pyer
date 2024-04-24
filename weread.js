@@ -23,6 +23,7 @@ const headers = {
 };
 const vid = headers['vid'];
 const bookId = JSON.parse($request.body).globalId;
+$.log(JSON.stringify(headers));
 
 let option1 = {
     url: "https://i.weread.qq.com/review/add",
