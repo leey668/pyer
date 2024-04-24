@@ -1,0 +1,12 @@
+#!name=微信读书
+#!desc=点击订阅上架通知，解锁下架书籍。
+#!author = @leepyer
+#!homepage = https://github.com/leey668
+#!icon=https://rescdn.qqmail.com/node/wr/wrpage/style/images/independent/appleTouchIcon/apple-touch-icon-152x152.png
+#!date = 2024-04-25 00:00:00
+
+[Script]
+http-response ^https:\/\/i\.weread\.qq\.com\/book\/notfound script-path=https://raw.githubusercontent.com/leey668/pyer/main/weread.js, timeout=60, tag=微信读书
+
+[MITM]
+hostname = i.weread.qq.com
