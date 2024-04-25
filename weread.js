@@ -48,7 +48,7 @@ let option3 = {
 		"bookIds": [ bookId ]
 	}
 };
-let option_4 = {
+let option4 = {
     url: `https://i.weread.qq.com/review/list?bookId=${bookId}&listType=11&mine=1&synckey=&userVid=${vid}`,
     headers: headers,
 };
@@ -57,16 +57,16 @@ try {
 	await $.http.post(option1);
     await $.http.get(option2);
     await $.http.post(option3);
-	let response = await $.http.get(option_4);
+	let response = await $.http.get(option4);
 	let reviewId = JSON.parse(response.body).reviews[0].reviewId;
-	let option_5 = {
+	let option5 = {
 		url: "https://i.weread.qq.com/review/delete",
 		headers: headers,
 		body: {
 			"reviewId": reviewId
 		}
 	};
-	await $.http.post(option_5);
+	await $.http.post(option5);
 } catch (error) {
     $.error('An error occurred:', error);
 }
