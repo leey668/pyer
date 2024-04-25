@@ -1,27 +1,9 @@
-/*************************************
-
-项目名称：微信读书解锁下架书籍
-脚本作者：leepyer
-电报频道：https://t.me/chxm1023
-使用声明：⚠️仅供参考，🈲转载与售卖！
-
-**************************************
-
-[rewrite_local]
-^https:\/\/i\.weread\.qq\.com\/book\/notfound url script-response-body https://raw.githubusercontent.com/leey668/pyer/main/weread.js
-
-[mitm]
-hostname = i.weread.qq.com
-
-*************************************/
-
 const $ = new Env("微信读书解锁下架书籍");
 
 const headers = { 
 	"cookie": "wr_logined=1",
 	...$request.headers
 };
-const vid = headers['vid'];
 const bookId = JSON.parse($request.body).globalId;
 $.log(JSON.stringify(headers));
 
@@ -48,25 +30,20 @@ let option3 = {
 		"bookIds": [ bookId ]
 	}
 };
-let option4 = {
-    url: `https://i.weread.qq.com/review/list?bookId=${bookId}&listType=11&mine=1&synckey=&userVid=${vid}`,
-    headers: headers,
-};
 
 try {
-	await $.http.post(option1);
+	let response = await $.http.post(option1);
+	let reviewId = JSON.parse(response.body).reviewId;
     await $.http.get(option2);
     await $.http.post(option3);
-	let response = await $.http.get(option4);
-	let reviewId = JSON.parse(response.body).reviews[0].reviewId;
-	let option5 = {
+	let option4 = {
 		url: "https://i.weread.qq.com/review/delete",
 		headers: headers,
 		body: {
 			"reviewId": reviewId
 		}
 	};
-	await $.http.post(option5);
+	await $.http.post(option4);
 } catch (error) {
     $.error('An error occurred:', error);
 }
