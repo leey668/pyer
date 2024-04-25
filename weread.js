@@ -8,7 +8,7 @@
 **************************************
 
 [rewrite_local]
-^https:\/\/i\.weread\.qq\.com\/book\/notfound url script-response-header https://raw.githubusercontent.com/leey668/pyer/main/weread.js
+^https:\/\/i\.weread\.qq\.com\/book\/notfound url script-response-body https://raw.githubusercontent.com/leey668/pyer/main/weread.js
 
 [mitm]
 hostname = i.weread.qq.com
