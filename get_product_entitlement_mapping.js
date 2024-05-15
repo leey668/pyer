@@ -10,7 +10,7 @@ $httpClient.get(params, function(errormsg,response,data) {
     if (errormsg) {
         console.log(errormsg);
     } else {
-        $notification.post('', '信息已获取','');
+        $notification.post('revenuecat', '信息已获取', data);
         console.log(JSON.parse(data));
     }
     $done();
