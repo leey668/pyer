@@ -1,16 +1,18 @@
 var responseBody = $response.body;
 var requestUrl = $request.url;
 
+if (!responseBody) $done({});
+
 if (requestUrl.includes('/api/v2/member/subscription')) {
-    var subscriptionInfo = {
+    var obj = {
         expiredAt: 4070880000,
         remainDays: 9999,
         active: true,
         startedAt: 1715749975
     };
-    $done({body: JSON.stringify(subscriptionInfo)});
+    $done({body: JSON.stringify(obj)});
 } else if (requestUrl.includes('/api/v2/user_goods_subscriptions/overall')) {
-    var overallSubscriptions = {
+    var obj = {
 		items: [{
 			startedAt: 1715749975,
 			category: 4,
@@ -22,5 +24,5 @@ if (requestUrl.includes('/api/v2/member/subscription')) {
 			firstStartedAt: 1715749975
 		}]
 	};
-	$done({body: JSON.stringify(overallSubscriptions)});
+	$done({body: JSON.stringify(obj)});
 }
