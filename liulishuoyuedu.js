@@ -11,7 +11,7 @@ if (requestUrl.includes('/api/v2/member/subscription')) {
         startedAt: 1715749975
     };
     $done({body: JSON.stringify(obj)});
-} else if (requestUrl.includes('/api/v2/user_goods_subscriptions/overall')) {
+} else if (requestUrl.includes('/api/v2/user_goods_subscriptions')) {
     var obj = {
 		items: [{
 			startedAt: 1715749975,
