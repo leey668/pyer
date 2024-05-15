@@ -1,5 +1,6 @@
 const url = "https://api.revenuecat.com/v1/product_entitlement_mapping";
 const headers = { ...$request.headers };
+console.log(headers['user-agent']);
 let params = {
     url:url,
     timeout:5000,
