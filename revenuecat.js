@@ -3,7 +3,7 @@ const pyer2 = JSON.parse(typeof $response != "undefined" && $response.body || nu
 
 const names = $persistentStore.read("name") ? $persistentStore.read("name").split(",") : [];
 const appids = $persistentStore.read("appid") ? $persistentStore.read("appid").split(",") : [];
-const forever = $persistentStore.read("forever");
+const forever = JSON.parse($persistentStore.read("forever"));
 
 if (typeof $response == "undefined") {
   delete $request.headers["x-revenuecat-etag"];
