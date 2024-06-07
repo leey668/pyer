@@ -37,7 +37,8 @@ if (typeof $response == "undefined") {
       ...data,
       "original_purchase_date": "2023-09-09T09:09:09Z",
       "store": "app_store",
-      "ownership_type": "PURCHASED"
+      "ownership_type": "PURCHASED",
+      "period_type" : "trial"
     };
   }
   
