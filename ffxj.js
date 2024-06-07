@@ -26,7 +26,15 @@ obj = {
       "description": "pro versions",
       "packages": [
         {
-          "platform_product_identifier": "com.uzero.funforcam.lifetimepurchase",
+          "platform_product_identifier": "com.uzero.funforcam.monthlysub",
+          "identifier": "$rc_monthly"
+        },
+        {
+          "platform_product_identifier": "com.uzero.funforcam.anualsub",
+          "identifier": "$rc_annual"
+        },
+        {
+          "platform_product_identifier": "com.uzero.funforcam.lifetimepurchase.upgrade",
           "identifier": "$rc_lifetime"
         },
         {
