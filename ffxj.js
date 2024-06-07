@@ -34,7 +34,7 @@ obj = {
           "identifier": "$rc_annual"
         },
         {
-          "platform_product_identifier": "com.uzero.funforcam.lifetimepurchase.upgrade",
+          "platform_product_identifier": "com.uzero.funforcam.lifetimepurchase.upfrommonth",
           "identifier": "$rc_lifetime"
         },
         {
