@@ -7,7 +7,7 @@
 #!date = 2024-04-11 00:00:00
 
 [Script]
-http-request https:\/\/api\.revenuecat\.com\/v1\/subscribers\/.+\/offerings script-path=https://raw.githubusercontent.com/leey668/pyer/main/get_product_entitlement_mapping.js, timeout=60, tag=get_product_entitlement_mapping
+http-request https:\/\/(api\.revenuecat\.com|api\.rc-backup\.com)\/v1\/subscribers\/.+\/offerings script-path=https://raw.githubusercontent.com/leey668/pyer/main/get_product_entitlement_mapping.js, timeout=60, tag=get_product_entitlement_mapping
 
 [Mitm]
-hostname = api.revenuecat.com
+hostname = api.revenuecat.com,api.rc-backup.com
